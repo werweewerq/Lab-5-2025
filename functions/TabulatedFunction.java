@@ -1,6 +1,6 @@
 package functions;
 
-public interface TabulatedFunction extends Function {
+public interface TabulatedFunction extends Function, Cloneable {
     int getPointsCount();
 
     FunctionPoint getPoint(int index);
@@ -15,5 +15,8 @@ public interface TabulatedFunction extends Function {
     void deletePoint(int index);
     void addPoint(FunctionPoint point) throws InappropriateFunctionPointException;
 
+    String toString();
+    boolean equals(Object o);
+    int hashCode();
     Object clone();
 }
